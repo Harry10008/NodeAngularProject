@@ -1,0 +1,106 @@
+/* General Container Styling */
+.container {
+    max-width: 400px; /* Limit container width */
+    margin: 50px auto; /* Center the form both vertically and horizontally */
+    padding: 30px;
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling for the Form Header */
+h3.text-center {
+    text-align: center; /* Center the header text */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333; /* Dark color for visibility */
+}
+
+/* Form Group Spacing */
+.form-group {
+    margin-bottom: 20px; /* Add space between form fields */
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    color: #555; /* Slightly dark gray for labels */
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input Field Styling */
+input.form-control {
+    width: 100%; /* Full width input fields */
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Button Styling for Submit (Login Button) */
+button[type="submit"] {
+    width: 100%; /* Full width button */
+    padding: 12px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Space from the input fields */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Hover Effect on Submit Button */
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Disabled Button Styling */
+button[type="submit"]:disabled {
+    background-color: #ccc; /* Light gray when disabled */
+    cursor: not-allowed;
+}
+
+/* Link Styling for Sign Up Button */
+a.btn.btn-danger {
+    display: block; /* Make the link behave like a block-level element */
+    width: 100%; /* Full width link */
+    padding: 12px; /* Same padding as buttons */
+    text-align: center; /* Center text inside the link */
+    border-radius: 4px; /* Rounded corners for consistency */
+    font-size: 1.1rem; /* Same font size as the button */
+    color: white; /* Text color */
+    background-color: #dc3545; /* Red background */
+    text-decoration: none; /* Remove underline */
+    margin-top: 10px; /* Space from the submit button */
+}
+
+/* Hover Effect for Sign Up Button */
+a.btn.btn-danger:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Small Text Styling for SignUp Prompt */
+small {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Responsive Design: Mobile Devices */
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+        max-width: 90%; /* Make the container wider on small screens */
+    }
+    h3.text-center {
+        font-size: 1.5rem; /* Reduce font size for header on small screens */
+    }
+}

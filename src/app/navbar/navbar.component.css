@@ -1,0 +1,94 @@
+/* General navbar styles */
+.navbar {
+  background-color: #f8f9fa; /* Light background for the navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem; /* Add padding for the content inside the navbar */
+}
+
+/* Timer styling */
+.timer h1 {
+  font-size: 1.2rem; /* Set a reasonable font size for the timer */
+  color: #333; /* Dark color for better readability */
+  margin-right: 20px; /* Add space to the right of the timer */
+}
+
+/* Button group styling */
+.btn {
+  font-size: 1rem;
+  padding: 8px 15px; /* Add some padding for larger buttons */
+  border-radius: 25px; /* Rounded corners */
+  font-weight: 500;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Primary button color */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darken blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Danger button color */
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker red on hover */
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Spacing between buttons */
+.me-3 {
+  margin-right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar .container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start;
+  }
+
+  .timer {
+    margin-bottom: 10px; /* Add space below the timer */
+  }
+
+  .btn {
+    width: 100%; /* Make buttons take up full width on smaller screens */
+    margin-bottom: 10px; /* Add space between stacked buttons */
+  }
+}
+
+/* Ensure the navbar container uses flexbox */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Flexbox for aligning the buttons to the right */
+.navbar-buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  align-items: center; /* Vertically center the buttons */
+  width: 100%;
+}
+
+/* Optional: Add space between buttons */
+.navbar-buttons .btn {
+  margin-left: 1rem; /* Left margin to space buttons */
+}
+

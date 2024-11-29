@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">  
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="card p-4 shadow-sm">
+          <h4 class="card-title text-center mb-4">{{ editIndex !== null ? 'Update User' : 'Register User' }}</h4>
+                 
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input 
+              id="name"
+              placeholder="Enter the name"
+              class="form-control"
+              formControlName="name" 
+              required 
+              type="text"
+              maxlength="25" 
+              (keypress)="preventNumbers($event)">
+            <div *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched" class="text-danger">
+              <div *ngIf="registerForm.controls['name'].hasError('required')">Name is required.</div>
+              <div *ngIf="registerForm.controls['name'].hasError('minlength')">Name must be at least 3 characters long.</div>
+              <div *ngIf="registerForm.controls['name'].hasError('maxlength')">Name must be at most 25 characters long.</div>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input 
+              placeholder="Enter the email" 
+              class="form-control"
+              id="email" 
+              formControlName="email" 
+              required 
+              type="email" 
+              maxlength="35"
+              onkeypress="return event.target"
+              >
+            <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="text-danger">
+              Please enter a valid email.
+            </div>
+          </div>
+
+            <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile No:</label>
+            <input 
+              class="form-control"
+              id="mobile" 
+              formControlName="mobile" 
+              required 
+              type="tel" 
+              inputmode="numeric"
+              maxlength="10"
+              placeholder="Enter the Mobile Number"
+              pattern="^\d{10}$">
+            <div *ngIf="registerForm.controls['mobile'].invalid && registerForm.controls['mobile'].touched" class="text-danger">
+              <div *ngIf="registerForm.controls['mobile'].hasError('required')">Mobile number is required.</div>
+              <div *ngIf="registerForm.controls['mobile'].hasError('pattern')">Please enter a valid 10-digit mobile number.</div>
+              <div *ngIf="registerForm.controls['mobile'].hasError('maxlength')">Mobile number must be exactly 10 digits long.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="city" class="form-label">City:</label>
+            <select class="form-select" id="city" formControlName="city" required>
+              <option value="">Select City</option>
+              <option value="Indore">Indore</option>
+              <option value="Bhopal">Bhopal</option>
+              <option value="Ujjain">Ujjain</option>
+              <option value="Dewas">Dewas</option>
+            </select>
+            <div *ngIf="registerForm.controls['city'].invalid && registerForm.controls['city'].touched" class="text-danger">
+              Please select a city.
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary w-100">
+              {{ editIndex !== null ? 'Update' : 'Submit' }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
